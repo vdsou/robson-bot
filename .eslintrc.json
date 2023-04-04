@@ -1,0 +1,17 @@
+{
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "rules": {
+      "trailingComma": "es5",
+      "tabWidth": 2,
+      "semi": 1,
+      "singleQuote": true,
+      "jsxSingleQuote": false
+    }
+  }
