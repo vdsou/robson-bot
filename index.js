@@ -4,7 +4,6 @@ const commandHandler = require("./events/message/");
 
 dotenv.config();
 
-console.log(process.env.DISCORD_TOKEN);
 const TOKEN = process.env.DISCORD_TOKEN;
 const client = new Client({
   intents: [
