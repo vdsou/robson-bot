@@ -1,7 +1,7 @@
 const dotenv = require("dotenv");
 const { Client, Events, GatewayIntentBits } = require("discord.js");
 const commandHandler = require("./events/message/");
-const apiConnect = require("./services/api-connect");
+const apiConnect = require("./services/apiConnectTest");
 
 dotenv.config();
 
