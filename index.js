@@ -11,6 +11,7 @@ const client = new Client({
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMessages,
     GatewayIntentBits.MessageContent,
+    GatewayIntentBits.GuildVoiceStates,
   ],
 });
 client.on("messageCreate", commandHandler);
@@ -22,7 +23,7 @@ client.on("messageCreate", (message) => {
 
 client.once(Events.ClientReady, async (client) => {
   const api = await apiConnect;
-  console.log(api)
+  console.log(api);
   console.log(`Ready! Logged in as ${client.user.tag}`);
 });
 
