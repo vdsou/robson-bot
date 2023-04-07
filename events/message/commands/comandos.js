@@ -1,7 +1,7 @@
 const api = require("../../../services/api");
 async function getCommands() {
   try {
-    const commands = await api.get("/get");
+    const commands = await api.get("/commands/get");
     return commands;
   } catch (error) {
     console.error(error);

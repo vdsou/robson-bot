@@ -1,6 +1,7 @@
 const dotenv = require("dotenv");
 const { Client, Events, GatewayIntentBits } = require("discord.js");
 const commandHandler = require("./events/message/");
+const apiConnect = require("./services/api-connect");
 
 dotenv.config();
 
@@ -19,7 +20,9 @@ client.on("messageCreate", (message) => {
   }
 });
 
-client.once(Events.ClientReady, (client) => {
+client.once(Events.ClientReady, async (client) => {
+  const api = await apiConnect;
+  console.log(api)
   console.log(`Ready! Logged in as ${client.user.tag}`);
 });
 
