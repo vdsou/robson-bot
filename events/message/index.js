@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const api = require("../../services/api");
+const audioPlayer = require("./audioPlayer");
 let commandsList = {};
 const getAllCommandsAPI = async () => {
   try {
@@ -36,7 +37,11 @@ module.exports = async (msg) => {
       if (seletedCommand) {
         // return through voice channel
         if (seletedCommand.audioYt) {
-          msg.channel.send("AUDIO");
+          try {
+            audioPlayer(msg, seletedCommand.audioYt);
+          } catch (error) {
+            console.log(error);
+          }
         } else {
           // return through text channel
           msg.channel.send({
