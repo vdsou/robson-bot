@@ -27,9 +27,13 @@ module.exports = async (msg) => {
   let command = msg.content.split(" ");
   if (command[0].startsWith("!")) {
     command = command[0].substring(1);
-    if (commandsList.hasOwnProperty(command))
+
+    if (commandsList.hasOwnProperty(command)) {
       return await commandsList[command](msg);
-    else {
+    }
+    if (command.startsWith("lind")) {
+      return await commandsList["lind"](msg);
+    } else {
       const APIcommands = await getAllCommandsAPI();
       const [seletedCommand] = APIcommands.filter(
         (item) => item.command === command
