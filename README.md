@@ -11,7 +11,7 @@ which make me and my friends happy while hanging on discord.
 - Show some cute kitty cat images.
 
 Most of the commands are stored in a MongoDB database.
-I decided to split the project into two main peaces:
+I decided to split the project into two main parts:
 
 - An **API** which its endpoints are going to be consumed by Robson own webpage, like his frontend and also the Bot himself.
 - A **discord Bot** build in Javascript along with discord.js which is a powerful Node.js module that allows you to interact with the Discord API very easily.
