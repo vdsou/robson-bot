@@ -3,6 +3,7 @@ const path = require("path");
 const api = require("../../services/api");
 const audioPlayer = require("./audioPlayer");
 let commandsList = {};
+
 const getAllCommandsAPI = async () => {
   try {
     const response = await api.get("/commands/get");
