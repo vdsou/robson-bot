@@ -110,9 +110,18 @@ module.exports = async (msg) => {
       countP1 = 0;
       countP2 = 0;
       let embedZero = new EmbedBuilder()
-        .setTitle(
-          `<@${player1.id}>: ${countP1} vs <@${player2.id}>: ${countP2}`
-        )
+        .setTitle("PLACAR DA FT")
+        .addFields({
+          name: `${countP1}`,
+          value: `<@${player1.id}>`,
+          inline: true,
+        })
+        .addFields({ name: "\u200B", value: "VS", inline: true })
+        .addFields({
+          name: `${countP2}`,
+          value: `<@${player2.id}>`,
+          inline: true,
+        })
         .setFooter({ text: "Adicione ou remova 1 ponto clicando nos botões." });
 
       await button.message.edit({
