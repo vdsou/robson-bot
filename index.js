@@ -2,6 +2,7 @@ const dotenv = require("dotenv");
 const { Client, Events, GatewayIntentBits } = require("discord.js");
 const commandHandler = require("./events/message/");
 const apiConnect = require("./services/apiConnectTest");
+const voiceChannelStateUpdate = require("./events/audio/voiceChannelStateUpdate");
 
 dotenv.config();
 
@@ -19,8 +20,7 @@ const client = new Client({
     GatewayIntentBits.GuildVoiceStates,
   ],
 });
-
-console.log(TEXT_JOKE, USER_JOKE);
+client.on("voiceStateUpdate", voiceChannelStateUpdate);
 client.on("messageCreate", commandHandler);
 client.on("messageCreate", (message) => {
   if (message.content === "oi") {
