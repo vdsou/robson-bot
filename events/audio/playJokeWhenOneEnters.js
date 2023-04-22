@@ -9,8 +9,7 @@ const ytdl = require("ytdl-core");
 module.exports = async (state) => {
   if (state.member.voice.channel) {
     const url = "https://www.youtube.com/watch?v=ICfDjL1s-e8";
-    await new Promise(resolve => setTimeout(resolve, 2250));
-    console.log("oioioi", state.member.voice.channel.id,)
+    await new Promise((resolve) => setTimeout(resolve, 2250));
     const connection = joinVoiceChannel({
       channelId: state.member.voice.channel.id,
       guildId: state.channel.guild.id,
@@ -41,8 +40,10 @@ module.exports = async (state) => {
         console.log("Playing the joke!");
       });
       player.on(AudioPlayerStatus.Idle, () => {
-        connection.destroy();
-        console.log("Bot left the channel")
+        if (connection) {
+          connection.destroy();
+        }
+        console.log("Bot left the channel");
       });
     } catch (error) {
       console.error(error);
