@@ -8,11 +8,12 @@ module.exports = async (oldState, newState) => {
   const oldInChannel = oldState.channel;
   const oldServer = oldState.guild;
   const newServer = newState.guild;
-  
+
   if (user?.bot) {
     return;
   }
   if (serversId.includes(newServer.id)) {
+
     if (
       oldState.selfMute !== newState.selfMute ||
       oldState.selfDeaf !== newState.selfDeaf ||
